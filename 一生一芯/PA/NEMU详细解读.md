@@ -1,0 +1,114 @@
+# 部分参数,变量的含义
+**<font color=purple>is_batch_mode</font>**:[^1]  
+> 含义: 批处理模式  
+
+> 值1: **true**-进入批处理模式，运行nemu后，直接运行整段程序(即执行cmd_c)  
+
+> 值2: **false**-不进入批处理模式，运行nemu后，等待指令的输入  
+
+**<font color=purple>gpr[32]</font>**:[^2]  
+> 含义: RISCV64架构计算机系统的寄存器  
+
+---
+# nemu代码解析
+- **<font color=purple>简介</font>**: 一款经过简化的计算机系统模拟器,被称为`客户计算机`  
+- **<font color=purple>运行命令</font>**: make run  
+- **<font color=purple>生成的可执行文件</font>**:/home/awjl/workspace/ysyx/ysyx-workbench/nemu/build/riscv64-nemu-interpreter  
+### init_monitor() : 执行一些全局初始化操作
+- <font color=blue> parse_args():</font>   
+   - `功能`: 用于对执行nemu时命令的参数分析
+   - `使用1`: ./riscv64-nemu-interpreter -b  
+      - > 效果: 进入批处理模式  
+   - `使用2`:可以在\$NEMU_HOME/scripts/native.mk中在变量NEMU_EXEC的后面添加选项(如-b -p -l -d)  
+
+- <font color=blue>init_rand()</font>:   
+   - `功能`: 初始化伪随机数生成器  
+   - `原理`: 如果宏`CONFIG_TARGET_AM`值为假(<font color=brown>默认为假</font>)，则srand参数为time(0)  
+   - `原理`: 如果值为真，则srand参数为0,则每次产生相同的随机数序列  
+
+- <font color=blue>init_log()</font>:   
+   - `功能`: 将log写入指定的log_file中  
+   - `使用`: 在运行时，加入参数`--log=log_file`给定log文件及其路径  
+
+- <font color=blue>init_mem()</font>:   
+   - `功能`(guess): 给pmem生成一个随机的地址  
+
+
+- <font color=blue>init_isa()</font>:   
+   - `功能`: 将`内置的客户程序`加载到内存中,初始化pc,0号寄存器  
+
+- <font color=blue>load_img()</font>:   
+   - `功能`: 加载客户程序到内存中(会覆盖内置客户程序)  
+      - > img: nemu中运行的程序称为`客户程序`  
+   - `使用`: 运行NEMU时通过添加参数来指定  
+
+- <font color=blue>init_difftest()</font>:   
+   - `功能`: 默认没定义宏`CONFIG_DIFFTEST`,因此不执行  
+
+- <font color=blue>init_sdb()</font>:   
+   - `功能`: 编译正则表达式,方便之后使用;初始化监视点池  
+
+- <font color=red>init_disasm()</font>:   
+   - `功能`: 初始化反汇编器  
+   - `原理`: <font color=red>暂时没去阅读</font>  
+
+---
+### cpu_exec() - 模拟CPU的工作
+- <font color=blue>nemu的集中运行状态</font>:   
+   - `NEMU_RUNNING`  
+   - `NEMU_STOP`  
+   - `NEMU_END`  
+   - `NEMU_ABORT`: 终止程序运行  
+   - `NEMU_QUIT`  
+
+- execute(-1):
+   - `作用`: 执行$2^64-1$次指令，相当于执行完内存中的所有指令  
+
+
+
+---
+
+# nemu代码中所使用到的宏
+
+## 1. 对调试有用的宏
+定义于`nemu/include/debug.h`  
+
+### Log()
+**简介**:`Log()`是`printf()`的升级版,专门<font color=red>用来输出调试信息</font>,同时还会输出使用`Log()`所在的源文件,行号和函数。  
+**用处**:这使得当输出的调试信息过多时，可以方便地定位到代码中的相关位置  
+**使用格式**: `Log(format,...)`
+
+> tip: <font color=purple>Log输出时的字体颜色还可以设置</font>, 根据源文件debug.h，nemu<font color=blue>默认设置log输出的颜色为`蓝色`</font>  
+- > **颜色选择**: \$NEMU_HOME/include/utils.h 中有定义  
+
+**代码解读**:   
+   - <font color=brown>宏展开</font>: `_Log(ANSI_FG_BLUE "[%s:%d %s] " format ANSI_NONE "\n", __FILE__, __LINE__, __func__, ## __VA_ARGS__)`  
+   - <font color=brown>参数</font>: `format`是一个字符串,如`" 请输入一个数字:%d"`  
+      - `## __VA_ARGS__` 一般用来作为format字符串里`%d`(或`%f`等等)对应的变量。类似于`printf()`  
+
+
+
+### Assert()
+`Assert()`是`assert()`的升级版:当<font color=purple>测试条件为假</font>时,在assertion fail之前可以输出一些信息  
+格式: `Assert(cond, format, ...)`
+
+### panic()
+`panic()`用于输出信息并<font color=red>结束程序</font>,相当于<font size=5>`无条件`</font>的`assertion fail`  
+
+## macro.h中的宏
+### IFDEF(macro, ...)
+- 展开1: `MUXDEF(CONFIG_DEVICE, __KEEP, __IGNORE)(init_device())`
+- 展开2: `MUX_MACRO_PROPERTY(__P_DEF_, CONFIG_DEVICE, __KEEP, __IGNORE)(init_device())`  
+- 展开3: `MUX_WITH_COMMA(__P_DEF_ ## CONFIG_DEVICE, __KEEP, __IGNORE)(init_device())`  
+- 展开4: `CHOOSE2nd(__P_DEF_ ## macro __KEEP, __IGNORE)(init_device())`  
+- 展开5-1: 若macro未被定义,则`__P_DEF_ ## macro`会被定义为空字符串
+   - 即`CHOOSE2nd(__KEEP,__IGNORE)(init_device())` = `空`  
+- 展开5-2: 若macro被定义,则`__P_DEF_ ## macro`会被定义为`X, ` 
+   - 即`CHOOSE2nd(X,__KEEP,__IGNORE)(init_device())` = `init_device()`  
+
+---
+
+# 注脚注释
+[^1]: nemu/scs/monitor/sdb/sdb.c
+[^2]: \$nemu/src/isa/riscv64/include/isa-def.h
+

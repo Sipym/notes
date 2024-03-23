@@ -1,0 +1,1 @@
+解决了ubuntu下printf的重定向的问题
