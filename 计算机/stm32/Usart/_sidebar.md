@@ -1,4 +1,4 @@
 * Usart
-   * [Readme](Readme.md)
    * [UART](UART.c)
+   * [Readme](Readme.md)
    * [UART](UART.h)

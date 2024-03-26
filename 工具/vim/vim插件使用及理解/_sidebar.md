@@ -1,10 +1,6 @@
 * vim插件使用及理解
-   * [coc](coc/)
-   * [遇到的bug](遇到的bug.md)
-   * [md-img-paste遇到的问题](md-img-paste遇到的问题.md)
-   * [nerdtree](nerdtree/)
-   * [配置](配置.md)
    * [snippts和ultisnips](snippts和ultisnips/)
-   * [介绍及使用](介绍及使用.md)
+   * [md-img-paste遇到的问题](md-img-paste遇到的问题.md)
+   * [coc](coc/)
    * [YCM](YCM/)
-   * [实现代码检查错误](实现代码检查错误.md)
+   * [nerdtree](nerdtree/)

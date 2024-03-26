@@ -19,7 +19,7 @@ generate_sidebar() {
   echo "* ${current_dir}" >> "$sidebar_file"
 
   # 遍历目录下的文件和文件夹,忽略掉了.开头和_开头的文件
-  files_and_dirs=$(find "$directory" -mindepth 1 -maxdepth 2 ! -name ".*" ! -name "_*" | sort -t / -k 2,2)
+  local files_and_dirs=$(find "$directory" -mindepth 1 -maxdepth 2 ! -path "*/.git/*" ! -name "_*" | sort -t / -k 2,2)
   for entry in $files_and_dirs; do
     entry_absolute_path=$(dirname $(realpath "${entry}"))
     sidebar_file_ab=$(dirname $(realpath "${sidebar_file}"))
