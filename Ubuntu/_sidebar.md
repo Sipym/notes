@@ -1,0 +1,10 @@
+* **ubuntu**
+   * [功能](功能/)
+   * [命令](命令/)
+   * [遇到过的问题](遇到过的问题/)
+   * [gnome扩展](gnome扩展/)
+   * [img](img/)
+   * [linux知识](linux知识/)
+   * [_sidebar](_sidebar.md)
+   * [trans.sh](trans.sh)
+   * [ubuntu环境搭建及配置](ubuntu环境搭建及配置/)
