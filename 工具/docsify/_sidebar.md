@@ -1,2 +1,2 @@
 * docsify
-   * [trans](trans.sh)
+   * [update_sidebar](update_sidebar.sh)

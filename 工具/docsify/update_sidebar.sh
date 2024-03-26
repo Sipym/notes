@@ -1,7 +1,7 @@
 #!/bin/bash
 generate_sidebar() {
     local cur_directory="$1"
-    local files_and_dirs=$(find "$cur_directory" -mindepth 1 -maxdepth 1  !  -path "*/img/*" !  -path "*/.git/*" ! -name "_*" ! -name "README.md" )
+    local files_and_dirs=$(find "$cur_directory" -mindepth 1 -maxdepth 1  !  -path "*/img/*" !  -path "*/.git/*" ! -name ".*" ! -name "_*" ! -name "README.md" ! -name "index.html" | sort -k 1,1 -k 9)
     #echo "$files_and_dirs"
     local sidebar_file="${cur_directory}/_sidebar.md"
     local sidebar_file_ab

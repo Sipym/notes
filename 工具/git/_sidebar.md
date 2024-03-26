@@ -1,8 +1,8 @@
 * git
-   * [解决下载速度慢的问题](解决下载速度慢的问题.md)
-   * [遇到的问题](遇到的问题/)
-   * [显示remote的url](显示remote的url.md)
    * [功能](功能/)
-   * [gitignore文件](gitignore文件.md)
+   * [解决下载速度慢的问题](解决下载速度慢的问题.md)
    * [我的配置](我的配置/)
    * [显示远程仓库的详细信息](显示远程仓库的详细信息.md)
+   * [显示remote的url](显示remote的url.md)
+   * [遇到的问题](遇到的问题/)
+   * [gitignore文件](gitignore文件.md)
