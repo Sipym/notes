@@ -1,8 +1,9 @@
-* **一生一芯**
+* 一生一芯
    * [预学习阶段](预学习阶段/)
+   * [nvboard总结](nvboard总结.md)
    * [状态机模型](状态机模型.md)
    * [组会学习进度汇报](组会学习进度汇报/)
    * [B阶段](B阶段/)
    * [git](git/)
-   * [img](img/)
+   * [develpment-tracing](develpment-tracing.md)
    * [PA](PA/)

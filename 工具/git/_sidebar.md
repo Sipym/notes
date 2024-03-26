@@ -1,9 +1,11 @@
-* **git**
+* git
    * [功能](功能/)
+   * [在nvim中打开终端](在nvim中打开终端.md)
    * [解决下载速度慢的问题](解决下载速度慢的问题.md)
    * [我的配置](我的配置/)
+   * [我的配置](我的配置.md)
    * [显示远程仓库的详细信息](显示远程仓库的详细信息.md)
    * [显示remote的url](显示remote的url.md)
    * [遇到的问题](遇到的问题/)
+   * [pull或push需要密码时的解决办法](pull或push需要密码时的解决办法.md)
    * [gitignore文件](gitignore文件.md)
-   * [_sidebar](_sidebar.md)

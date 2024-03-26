@@ -1,7 +1,10 @@
-* **PA**
+* PA
    * [注意事项](注意事项.md)
    * [nemu的框架代码](nemu的框架代码.md)
    * [NEMU详细解读](NEMU详细解读.md)
    * [PA0](PA0/)
+   * [PA0实验报告](PA0实验报告.md)
    * [PA1](PA1/)
+   * [PA1学习笔记与心得](PA1学习笔记与心得.md)
    * [PA2](PA2/)
+   * [RISCV64指令集nemu实现心得](RISCV64指令集nemu实现心得.md)

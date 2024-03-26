@@ -20,18 +20,20 @@ generate_sidebar() {
 
   # 遍历目录下的文件和文件夹
   for entry in "$directory"/*; do
-    # 检查是否为文件
-    if [ -f "$entry" ]; then
-      filename=$(basename "$entry")
-      filename_no_ext="${filename%.*}"  # 去掉文件后缀
-      echo "   * [${filename_no_ext}](${filename_no_ext})" >> "$sidebar_file"
-    fi
-    # 检查是否为文件夹
-    if [ -d "$entry" ]; then
+    entry_absolute_path=$(realpath "$entry")
+    # 检查是否为文件夹，并且排除名为 img 和 _sidebar.md 的文件夹
+    if [ -d "$entry" ] && [ "${entry##*/}" != "img" ] && [ "${entry##*/}" != "_sidebar.md" ] && [ "$entry_absolute_path" == "${directory}"/* ]; then
       dirname=$(basename "$entry")
-      echo "   * [${dirname}](${dirname}/)" >> "$sidebar_file"
+      dirname_no_slash="${dirname%/}"  # 去掉文件夹名中的斜杠字符
+      echo "   * [${dirname_no_slash}](${dirname_no_slash}/)" >> "$sidebar_file"
       # 递归调用自身处理子文件夹
       generate_sidebar "$entry"
+    fi
+    # 检查是否为文件，并排除下划线开头、README.md 和 index.html 文件
+    if [ -f "$entry" ] && [ "${entry##*/}" != "_sidebar.md" ] && [ "${entry##*/}" != "README.md" ] && [ "${entry##*/}" != "index.html" ] && [[ "${entry##*/}" != _* ]] && [ "$entry_absolute_path" == "${directory}"/* ]; then
+      filename=$(basename "$entry")
+      filename_no_ext="${filename%.*}"  # 去掉文件后缀
+      echo "   * [${filename_no_ext}](${filename})" >> "$sidebar_file"
     fi
   done
 

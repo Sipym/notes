@@ -1,2 +1,3 @@
-   * [coc-explorer/](coc-explorer/)
-   * [_sidebar.md](_sidebar.md)
+* 扩展
+   * [coc-explorer](coc-explorer/)
+   * [操作](操作.md)

@@ -1,3 +1,17 @@
-<!-- _sidebar.md -->
-
-...
+* 计算机
+   * [编程语言](编程语言/)
+   * [小知识点](小知识点/)
+   * [bash](bash/)
+   * [if语句](if语句.md)
+   * [gcc](gcc/)
+   * [-O参数](-O参数.md)
+   * [hardware](hardware/)
+   * [makefile](makefile/)
+   * [markdown](markdown/)
+   * [PID控制](PID控制/)
+   * [PID](PID.md)
+   * [QT](QT/)
+   * [riscv](riscv/)
+   * [riscv基本概述](riscv基本概述.md)
+   * [stm32](stm32/)
+   * [trans](trans.sh)

@@ -1,2 +1,2 @@
-   * [提示缺少package.js](提示缺少package.js)
-   * [_sidebar.md](_sidebar.md)
+* 遇到的问题
+   * [提示缺少package](提示缺少package.js)

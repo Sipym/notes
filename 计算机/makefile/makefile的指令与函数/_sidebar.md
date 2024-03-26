@@ -1,0 +1,10 @@
+* makefile的指令与函数
+   * [函数列表](函数列表.md)
+   * [控制函数](控制函数.md)
+   * [文本处理函数](文本处理函数.md)
+   * [文件名处理函数](文件名处理函数.md)
+   * [abspath函数](abspath函数.md)
+   * [filter函数](filter函数.md)
+   * [sed指令](sed指令/)
+   * [sed指令](sed指令.md)
+   * [wildcard函数](wildcard函数.md)

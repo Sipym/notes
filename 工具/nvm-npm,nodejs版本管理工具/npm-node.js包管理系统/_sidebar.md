@@ -1,3 +1,4 @@
-   * [包目录.md](包目录.md)
-   * [遇到的问题/](遇到的问题/)
-   * [_sidebar.md](_sidebar.md)
+* npm-node.js包管理系统
+   * [包目录](包目录.md)
+   * [遇到的问题](遇到的问题/)
+   * [提示缺少package](提示缺少package.js)

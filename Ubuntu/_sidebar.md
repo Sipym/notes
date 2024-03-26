@@ -1,10 +1,13 @@
-* **ubuntu**
+* Ubuntu
    * [功能](功能/)
+   * [ubuntu扩容](ubuntu扩容.md)
    * [命令](命令/)
+   * [wc命令-计算文件行数等](wc命令-计算文件行数等.md)
    * [遇到过的问题](遇到过的问题/)
+   * [iconv无法正常的进行编码格式转换](iconv无法正常的进行编码格式转换.md)
    * [gnome扩展](gnome扩展/)
-   * [img](img/)
+   * [ubuntu桌面环境gnome插件安装教程](ubuntu桌面环境gnome插件安装教程.md)
    * [linux知识](linux知识/)
-   * [_sidebar](_sidebar.md)
-   * [trans.sh](trans.sh)
+   * [linux软链接和硬链接](linux软链接和硬链接.md)
    * [ubuntu环境搭建及配置](ubuntu环境搭建及配置/)
+   * [ubuntu环境搭建步骤](ubuntu环境搭建步骤.md)
