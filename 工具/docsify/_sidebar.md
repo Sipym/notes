@@ -1,1 +1,3 @@
-   * [trans.sh](trans.sh)
+* docsify
+   * [_sidebar](_sidebar)
+   * [trans](trans)
