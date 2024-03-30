@@ -1,3 +1,4 @@
+## ubuntu基本环境配置
 1. 安装fctix输入法,系统设置下载语言包及参考[谷歌输入法](https://zhuanlan.zhihu.com/p/508797663)  
    - 添加自定义词库[参考链接](https://bbs.deepin.org/post/253191)
 ``` bash
@@ -87,8 +88,48 @@ sudo bash -c 'echo "deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main r
 
 ---
 
-## 安装honkit,用于搭建基于markdown,git的书籍
-[参考链接](https://github.com/honkit/honkit)  
-
+## 安装docsify,用于搭建基于markdown,git的书籍
 1. 安装docsify:`npm i docsify-cli -g`
+
+
+
+---
+
+## Python环境配置
+1. 官网下载anaconda  
+2. 在终端运行安装  
+3. 根据需要建立环境(我建了一个awjl的环境)安装包  
+### 已经安装的包(图像处理)
+1. conda install pillow  
+2. pip install opencv-python  
+3. conda install opencv  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
