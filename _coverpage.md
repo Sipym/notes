@@ -5,7 +5,6 @@
 
 <!-- 背景图片 -->
 
-![](./picture/07.png)
 
 
 [GitHub](https://github.com/Sipym/notes)
