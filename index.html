@@ -30,36 +30,36 @@
 <body>
    <div id="app"></div>
    <script>
-      window.$docsify = {
-         // 加载 _sidebar.md,用于自定义侧边栏目录
-         loadSidebar: true,
-         //根据markdown文件内的各个标题生成目录，数字代表最多层级  
-         subMaxLevel: 3,
-         // 从 _navbar.md中加载导航栏
-         loadNavbar: true,
-         // 从_coverpage.md中加载封面
-         //coverpage: true,
+    window.$docsify = {
+        // 加载 _sidebar.md,用于自定义侧边栏目录
+        loadSidebar: true,
+        //根据markdown文件内的各个标题生成目录，数字代表最多层级  
+        subMaxLevel: 5,
+        // 从 _navbar.md中加载导航栏
+        loadNavbar: true,
+        // 从_coverpage.md中加载封面
+        //coverpage: true,
+        //开启相对路径
+        relativePath: true,
 
-         //开启相对路径
-         relativePath: true,
+        //侧边栏目录默认展开层数
+        sidebarDisplayLevel: 2,
+        //小屏设备下合并导航栏到侧边栏
+        mergeNavbar: true,
 
-         //侧边栏目录默认展开层数
-         sidebarDisplayLevel: 2,
-         //小屏设备下合并导航栏到侧边栏
-         mergeNavbar: true,
-
-         name: '',
-         repo: 'Sipym/notes',
-         //latex语法支持
-         latex: {
+        name: '',
+        repo: 'Sipym/notes',
+        //latex语法支持
+        latex: {
             inlineMath: [['$', '$'], ['\\(', '\\)']], // default
             displayMath: [['$$', '$$']],               // default
-         },
-         //搜索相关配置
-         // 搜索完整配置参数
+        },
+        //搜索相关配置
+        // 搜索完整配置参数
 
-      }
-   </script>
+
+    }
+</script>
    <!-- Docsify v4 -->
    <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
 
@@ -76,7 +76,7 @@
 
    <!--4-主题切换-->
    <script src="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/index.min.js" type="text/javascript">
-   </script>
+</script>
    <!--5-显示图片标题 -->
    <script src="https://unpkg.com/@h-hg/docsify-image-caption/dist/docsify-image-caption.min.js"></script>
    <!-- 6- LaTeX display engine script Here -->
@@ -85,6 +85,8 @@
 
    <!-- 7-脚注 -->
    <script src="//cdn.jsdelivr.net/npm/docsify-footnote/dist/docsify-footnote.min.js"></script>
+    <!-- 8-搜索 --> 
+    <!--<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>-->
 
 </body>
 </html>
