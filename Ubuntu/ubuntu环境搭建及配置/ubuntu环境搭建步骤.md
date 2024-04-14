@@ -107,7 +107,13 @@ sudo bash -c 'echo "deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main r
 
 
 
-
+## 安装logisim-数字逻辑电路绘画及仿真工具
+1. 安装java环境:`sudo apt-get install default-jdk`  
+2. 安装logisim.jar文件.[参考链接](https://vlab.ustc.edu.cn/downloads/logisim-generic-2.7.1.jar)  
+   - 需要中文版的话另找资源  
+3. 赋予`.jar`文件可执行权限.`chmod +x`  
+4. 在`.bashrc`文件中添加`alias logisim='java -jar ~/Software/logisim-generic-2.7.1.jar'`  
+4. 运行logisim. `logisim`  
 
 
 
