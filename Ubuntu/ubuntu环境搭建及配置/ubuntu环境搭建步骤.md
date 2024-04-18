@@ -78,6 +78,19 @@ sudo bash -c 'echo "deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main r
 4. 安装vivado  
   > `sudo apt-get install libncurses5`  
 
+### 配置verilog 语法环境(不好用)
+1. 添加vim的verilog语法支持[参考链接](https://github.com/neoclide/coc.nvim/wiki/Language-servers#systemverilog)  
+2. 按要求安装`svlangserver`:[链接](https://github.com/imc-trading/svlangserver#installation)  
+3. 修改`coc-setting.json`文件  
+4. 安装`verible`-`一款包括解析器、样式检查器、格式化程序和语言服务器的工具`[安装链接](https://github.com/chipsalliance/verible/releases)  
+   - 并不好用
+
+### 使用vtags
+[下载链接](https://www.vim.org/scripts/script.php?script_id=5494)
+[参考链接](https://blog.csdn.net/baidu_32639021/article/details/102740151)
+1. 存在报错，根据报错修改就行了 `File "/home/awjl/Software/vtags-3.11/OfflineLib/OfflineFuncLib.py", line 218  print "Note: not set depth default == 1 !"`  
+   - 这是因为他是python2的语法，修改成`print("Note: not set depth default == 1 !")`就OK了
+2. 在`vim_glib_config.py`文件中修改`support_verilog_postfix`  
 ---
 
 

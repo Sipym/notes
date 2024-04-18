@@ -9,7 +9,6 @@
    * [事件控制](事件控制.md)
    * [数据类型及数字表示](数据类型及数字表示.md)
    * [数据类型](数据类型.md)
-   * [basic](basic/)
-   * [img](img/)
+   * [基础](基础/)
    * [verilog结构](verilog结构/)
    * [verilog语句](verilog语句/)

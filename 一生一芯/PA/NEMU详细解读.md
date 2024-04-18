@@ -52,7 +52,6 @@
    - `功能`: 初始化反汇编器  
    - `原理`: <font color=red>暂时没去阅读</font>  
 
----
 ### cpu_exec() - 模拟CPU的工作
 - <font color=blue>nemu的集中运行状态</font>:   
    - `NEMU_RUNNING`  
@@ -63,9 +62,47 @@
 
 - execute(-1):
    - `作用`: 执行$2^64-1$次指令，相当于执行完内存中的所有指令  
+---
 
+# isa模拟过程
+1. **初始化了pc和gpr[0]**:
+   - 执行: `nemu_main()`调用`init_isa()`:
+2. 调用`execute(-1)`来执行所有指令  
+3. 初始化Decode结构体,并开始循环执行`exec_once(&s,cpu.pc)`  
+   - ><font color=green>s->pc   = pc;</font>   
+   - ><font color=green>s->snpc = pc;</font>   
 
+4. 调用`isa_exec_once`:  
+   - > <font color=green>s->snpc+=4</font>   
+   - `取指inst_fetch()`: 传入`虚拟地址pc`,通过`guest_to_host()`，<font color=red>将虚拟地址转换为物理地址来</font>`访问存储器pmem`  
+```c
+uint8_t* guest_to_host(paddr_t paddr) { return pmem + paddr - CONFIG_MBASE; } 
+```
+5. **译码**:`decode_exec(Decode *s)`  
+   - > <font color=green>dnpc=snpc</font>   
+      - > 根据不同跳转指令，dnpc可能会取其他值  
+6. 译码后，执行相应操作。  
+7. 令`R(0) = 0`  
+8. `cpu.pc = s->dnpc`  
 
+## 用到的结构体
+**Decode结构体**:  
+```c
+typedef struct Decode {
+  vaddr_t pc;
+  vaddr_t snpc; // static next pc
+  vaddr_t dnpc; // dynamic next pc
+  ISADecodeInfo isa;
+  IFDEF(CONFIG_ITRACE, char logbuf[128]);
+} Decode;
+```
+**定义了cpu结构体**:包含了当前pc和通用寄存器  
+```c
+typedef struct {
+  word_t gpr[32];
+  vaddr_t pc;
+} riscv64_CPU_state;
+```
 ---
 
 # nemu代码中所使用到的宏

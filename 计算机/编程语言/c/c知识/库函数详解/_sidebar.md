@@ -5,7 +5,6 @@
    * [字符串转换为不同数据类型](字符串转换为不同数据类型/)
    * [getopt](getopt/)
    * [gettimeofday](gettimeofday/)
-   * [img](img/)
    * [rand生成随机数](rand生成随机数/)
    * [readline](readline/)
    * [regex库](regex库/)

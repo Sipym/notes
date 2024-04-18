@@ -29,7 +29,7 @@ generate_sidebar() {
         #echo "---"
 
         # 如果是文件夹
-        if [ -d "$entry" ] ; then
+        if [ -d "$entry" ] && [ "$(basename "$entry")" != "img" ]; then
             # 判断当前文件夹是不是sidebar所在文件夹
             if [ "$entry_absolute_path" = "$sidebar_file_ab" ]; then
                 dirname=$(basename "$entry")

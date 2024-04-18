@@ -15,6 +15,5 @@
    * [C指针](C指针.md)
    * [gdb](gdb/)
    * [goto和标签](goto和标签.md)
-   * [img](img/)
    * [main函数参数详解](main函数参数详解.md)
    * [main函数返回值](main函数返回值.md)

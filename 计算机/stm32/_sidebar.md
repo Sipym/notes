@@ -5,6 +5,5 @@
    * [使用cubemx开发](使用cubemx开发.md)
    * [问题-stm32被锁](问题-stm32被锁.md)
    * [下载程序到stm32](下载程序到stm32.md)
-   * [img](img/)
    * [linux开发stm32过程](linux开发stm32过程.md)
    * [Usart](Usart/)
