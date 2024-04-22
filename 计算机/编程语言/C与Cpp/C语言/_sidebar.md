@@ -1,11 +1,9 @@
-* c
+* C语言
+   * [debugger](debugger/)
+   * [c基础知识](c基础知识/)
    * [我的clang-format的配置](我的clang-format的配置)
    * [在ubuntu上构建好vim的c环境](在ubuntu上构建好vim的c环境.md)
    * [自动生成依赖关系](自动生成依赖关系.md)
-   * [c知识](c知识/)
    * [ccache一个快速c编译缓存器](ccache一个快速c编译缓存器.md)
-   * [clang-format](clang-format/)
    * [clang-format](clang-format.md)
-   * [cmake](cmake/)
-   * [debugger](debugger/)
    * [ubuntu上的c环境的构建](ubuntu上的c环境的构建.md)

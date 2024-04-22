@@ -105,6 +105,10 @@ typedef struct {
 ```
 ---
 
+# nemu为调试添加的工具
+## itrace - 指令执行的踪迹
+**位置**:`nemu/src/cpu/cpu-exec.c`中  
+
 # nemu代码中所使用到的宏
 
 ## 1. 对调试有用的宏
@@ -144,6 +148,7 @@ typedef struct {
    - 即`CHOOSE2nd(X,__KEEP,__IGNORE)(init_device())` = `init_device()`  
 
 ---
+
 
 # 注脚注释
 [^1]: nemu/scs/monitor/sdb/sdb.c

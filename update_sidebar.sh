@@ -1,12 +1,17 @@
 #!/bin/bash
+
+all_files=()
+
 generate_sidebar() {
     local cur_directory="$1"
-    local files_and_dirs=$(find "$cur_directory" -mindepth 1 -maxdepth 1  !  -path "*/img/*" !  -path "*/.git/*" ! -name ".*" ! -name "_*" ! -name "README.md" ! -name "index.html" | sort -k 1,1 -k 9)
+    # 两个find,分别用于寻找文件和文件夹
+    local files_and_dirs=$(find "$cur_directory" -mindepth 1 -maxdepth 1 -type d ! -path "*/img/*" ! -path "*/.git"  ! -name "_*" ; find "$cur_directory" -mindepth 1 -maxdepth 1 ! -type d ! -path "*/img/*" ! -path "*/.git/*" ! -name ".*" ! -name "_*" ! -name "README.md" ! -name "*.sh" ! -name "index.html" | sort)
     #echo "$files_and_dirs"
     local sidebar_file="${cur_directory}/_sidebar.md"
     local sidebar_file_ab
     # 得到sidebar所在的文件夹
     sidebar_file_ab=$(dirname  "${sidebar_file}")
+    
 
     if [ ! -d "$cur_directory" ]; then
         echo "Error: $cur_directory 不是一个有效的目录。"
@@ -42,11 +47,28 @@ generate_sidebar() {
         if [ -f "$entry" ] ; then
             if [ "$entry_absolute_path" = "$sidebar_file_ab" ]; then
                 filename=$(basename "$entry")
+                filename_full_path="${entry_absolute_path}/${filename}" 
                 filename_no_ext="${filename%.*}"  # 去掉文件后缀
                 echo "   * [${filename_no_ext}](${filename})" >> "$sidebar_file"
+                all_files+=("$filename_full_path")
             fi
         fi
     done
 }
 
 generate_sidebar "/home/awjl/notes"
+
+echo "search: [" > 1.txt
+count=0
+for file in "${all_files[@]}"; do
+    # Remove the prefix '/home/awjl/notes/' from each file path
+    file_without_prefix="${file#/home/awjl/notes/}"
+    echo -n "'$file_without_prefix'," >> 1.txt
+    ((count++))
+    if [ $((count % 8)) -eq 0 ]; then
+        echo "" >> 1.txt  # Add a newline after every 5th file
+    fi
+done
+
+
+
