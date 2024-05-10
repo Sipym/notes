@@ -98,6 +98,7 @@ VME**运行时环境(AM)需要提供**:
 3. 在`cpu_test`运行即可`make ARCH=native ALL=string run`  
 
 ### 在nemu上验证
+...
 
 
 

@@ -149,6 +149,55 @@ typedef struct {
 
 ---
 
+# 程序失败会输出的信息即过程
+**失败原因**:一般失败是由于`Assert(cond)`导致,即条件cond不满足时  
+
+**输出信息**: Assert会调用函数`assert_fail_msg()`,位于`nemu/src/cpu/cpu-exec.c`  
+   - `isa_reg_display()`: 打印所有寄存器的值  
+   - `statistic()`:输出运行花费时间，总共执行的指令数  
+
+
+# nemu从.bin文件中得到指令的过程
+```c
+static uint8_t pmem[0x80000000] = {};
+
+static long load_img () {
+
+    static char *img_file = "1.bin";
+    if (img_file == NULL) {
+        printf ("No image is given. Use the default build-in image.");
+
+    FILE *fp = fopen (img_file, "rb");
+
+    fseek (fp, 0, SEEK_END);
+    long size = ftell (fp);
+
+    printf ("The image is %s, size = %ld\n", img_file, size);
+    fseek (fp, 0, SEEK_SET);
+    int ret = fread (pmem, size, 1, fp);    // 将image的内容存入地址中
+
+    fclose (fp);
+    return size;
+}
+
+
+int main () {
+    int size = load_img();
+    for (int i = 0; i < size; ) {
+        printf("0x%08x\n",*(uint32_t*)(pmem+i));
+        i+=4;
+    }
+    return 0;
+}
+```
+1. 给定`img_file`的文件路径  
+2. 打开指定文件，并读取所有内容到pmem中  
+3. 即获得了所有指令
+
+# 相关概念
+NEMU是一个用来执行其他程序的程序，叫**通用程序**  
+   - 通俗含义: 其他程序能做的事，它也能做  
+
 
 # 注脚注释
 [^1]: nemu/scs/monitor/sdb/sdb.c

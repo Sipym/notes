@@ -1,4 +1,4 @@
-* makefile
+* makefile(太散乱了-新笔记见Makefile)
    * [命令](命令/)
    * [变量](变量/)
    * [makefile规则](makefile规则/)

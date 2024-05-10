@@ -1,8 +1,8 @@
 * 计算机
-   * [makefile](makefile/)
    * [stm32](stm32/)
    * [编程语言](编程语言/)
    * [QT](QT/)
+   * [makefile(太散乱了-新笔记见Makefile)](makefile(太散乱了-新笔记见Makefile)/)
    * [riscv](riscv/)
    * [PID控制](PID控制/)
    * [小知识点](小知识点/)
@@ -10,3 +10,4 @@
    * [bash](bash/)
    * [gcc](gcc/)
    * [markdown](markdown/)
+   * [Makefile](Makefile/)

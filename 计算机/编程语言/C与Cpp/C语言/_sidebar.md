@@ -1,9 +1,10 @@
 * C语言
    * [debugger](debugger/)
    * [c基础知识](c基础知识/)
+   * [库函数详解](库函数详解/)
+   * [ELF格式](ELF格式/)
    * [我的clang-format的配置](我的clang-format的配置)
    * [在ubuntu上构建好vim的c环境](在ubuntu上构建好vim的c环境.md)
    * [自动生成依赖关系](自动生成依赖关系.md)
-   * [ccache一个快速c编译缓存器](ccache一个快速c编译缓存器.md)
    * [clang-format](clang-format.md)
    * [ubuntu上的c环境的构建](ubuntu上的c环境的构建.md)
