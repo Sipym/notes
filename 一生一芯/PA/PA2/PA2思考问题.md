@@ -43,3 +43,22 @@ gcc -o hello hello.o
 
 **题目**:  为什么错误码是1呢? 你知道make程序是如何得到这个错误码的吗?  
 **解答**: 原因是，作为配方的一部分调用的程序返回了非 0 错误代码（‘Error NN’），这使得 make 解释为失败，或者以其他异常方式退出（带有某种类型的信号”）
+
+## 输入输出
+![img](img/思考题-理解volatile关键字.png '思考题-理解volatile关键字 :size=50%')  
+**解答**:  
+1. `volatile的作用`: 修饰变量时，确保<font color=blue>每次访问</font>该变量时，<font color=red>都会生成指令</font>,**<font color=red>从内存中读取其值</font>**, 从而不会将其优化  
+2. `去掉volatile带来的问题`: 会导致`访问该变量时`，<font color=blue>使用寄存器中的缓存值</font>.对于该段函数，就会生成一段死循环代码,没有循环后面的后续  
+
+---
+**问题**: 理解mainargs  
+**解答**:  
+1. 通过`a-m/scripts/platform/nemu.mk`中的`CFLAGS`引用  
+```make
+CFLAGS += -DMAINARGS=\"$(mainargs)\"
+```
+
+
+
+
+

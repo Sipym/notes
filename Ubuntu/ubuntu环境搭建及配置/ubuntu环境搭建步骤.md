@@ -130,7 +130,8 @@ sudo bash -c 'echo "deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main r
 
 
 
-
+## 安装yosys-sta
+[参考链接](https://github.com/OSCPU/yosys-sta)  
 
 
 

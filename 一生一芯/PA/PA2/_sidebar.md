@@ -1,5 +1,6 @@
 * PA2
    * [测试klib的实现](测试klib的实现.md)
+   * [输入输出IOE](输入输出IOE.md)
    * [踪迹trace的实现](踪迹trace的实现.md)
    * [Differential_testing](Differential_testing.md)
    * [PA2必答题](PA2必答题.md)

@@ -1,5 +1,5 @@
 # DiffTest
-**使用**: 提供一个和DUT(Design Under Test)测试对象)功能相同但实现方式不同的REF(Reference,参考实现),然后让它们接受`相同`的有定义的`输入`，观测它们的`行为是否相同`  
+**概念**: 提供一个和DUT(Design Under Test)测试对象)功能相同但实现方式不同的REF(Reference,参考实现),然后让它们接受`相同`的有定义的`输入`，观测它们的`行为是否相同`  
 
 **nemu中使用**: 让在NEMU中执行的每条指令在真机中执行一次，然后比较NEMU和另一模拟器的状态(<font color=red>检查各自寄存器和内存的状态</font>),如果不一致，马上报告错误，停止客户程序的执行  
    - <font color=green>状态</font>: 表示成`S = <R,M`,其中`R`是寄存器的值，`M`是内存的值  
@@ -19,9 +19,10 @@ void difftest_init();
 ```
 > <font color=skyblue>寄存器状态dut</font>: <font color=red>要求寄存器的成员按照某种顺序排列</font>  
 
-## 实现
+## nemu使用流程
 -  **第一步**:调用`nemu/src/cpu/difftest/dut.c`和`init_difftest()`  
    - 进行相关初始化工作,使`DUT`,`REF`处于相同状态  
+   - <font color=red>链接动态库，获取`ref`的相关符号地址</font>  
 - **第二步**: `difftest_step(当前指令pc值,下一条要执行指令的pc值即dnpc)`  
    - 比较逐条指令执行后的状态  
 

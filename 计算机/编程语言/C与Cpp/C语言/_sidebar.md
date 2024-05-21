@@ -1,6 +1,7 @@
 * C语言
    * [debugger](debugger/)
    * [c基础知识](c基础知识/)
+   * [扩展知识](扩展知识/)
    * [库函数详解](库函数详解/)
    * [ELF格式](ELF格式/)
    * [我的clang-format的配置](我的clang-format的配置)
