@@ -34,6 +34,12 @@ NEMU实现了串口, 时钟, 键盘, VGA, 声卡, 磁盘, SD卡七种设备
 2. 对上述设备进行初始化  
 3. 进行定时器相关的初始化工作(PA4用到)  
 
+`device_update()`:  
+1. `cpu_exec()`在没执行完一条指令后，就会调用该函数  
+2. 检查距离上次设备更新是否超过一定时间，若是，则刷新屏幕  
+3. 检查<font color=red>是否有按键按下/释放</font>  
+4. ...
+
 ###<font color=red>NEMU实现IOE的具体原理</font> 
 **设备初始化**:  调用`init_device()`函数: 初始化map,初始化各个设备  
    - `map`: <font color=red>用于存放设备寄存器的数据</font>  
@@ -82,8 +88,19 @@ void ioe_write(int reg, void *buf);
 3. 因此，<font color=red>要实现`ioe_read()`,首先需要实现各个`am_...()`函数</font>  
    - > 实现方式，就可以参考上面那一小节的原理介绍  
 
+### 键盘IOE的实现原理
+在am/src/platform/nemu/ioe/input.c中提供了注释
+
+
+### 设备-VGA
+用到的<font color=purple>抽象寄存器</font>:  
+- `AM_GPU_CONFIG`: AM显示控制器信息，可以<font color=green>读出屏幕大小信息</font>`width`和`height`.AM假设在运行过程中，屏幕大小不会发生变化  
+- `AM_GPU_FBDRAW`: AM帧缓冲控制器，可写入绘图信息。向屏幕`(x,y)`坐标处绘制`w*h`的矩形图像  
+   - 图像像素按行有限方式存储在`pixels`中，每个像素用32位证书以`00RRGGBB`方式描述颜色  
+   - `sync == true`时，马上将帧缓冲的内容同步到屏幕上  
+
 ---
-##### 设备与difftest
+## 设备与difftest
 由于NEMU中设备的`行为是我们自定义`的, 与REF中的标准设备的`行为不完全一样` (例如NEMU中的串口总是就绪的, 但QEMU中的串口也许并不是这样), 这<font color=purple>导致在NEMU中执行输入指令的结果会和REF有所不同</font>  
 
 **使Difftest能正常工作**: 调用`difftest_skip_ref`函数,跳过与REF的检查  

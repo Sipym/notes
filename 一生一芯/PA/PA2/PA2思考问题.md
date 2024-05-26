@@ -58,7 +58,7 @@ gcc -o hello hello.o
 CFLAGS += -DMAINARGS=\"$(mainargs)\"
 ```
 
-
-
-
-
+### 键盘
+**如何检测多个键盘同时被按下**:  
+*解答*: (<font color=red>不确定</font>)  
+1. key_queue中存放的键码，不止一个。...
