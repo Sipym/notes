@@ -1,4 +1,4 @@
-# 第五章 CAN总线
+# 第五章 CAN总线(都重要)
 ## 5.1 CAN总线工作原理
 当CAN总线上的一个节点(站)发送数据时，它以报文形式<font color=purple>广播</font>给网络中的<font color=purple>所有节点</font>。  
 每组报文开头的11位字符为标识符，<font color=purple>定义了报文的优先级</font>  

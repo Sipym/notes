@@ -1,5 +1,7 @@
-# 第四章 LonWorks总线技术
+# 第四章 LonWorks总线技术(都重要)
 > :bulb:Neuron = 神经元
+
+> :star: `LonWorks`<font color=red>被誉为通用控制网络</font>  
 
 ## 4.1 LonWorks总线概述
 ### 4.1.1 LonWorks总线技术的特点
@@ -36,7 +38,7 @@ LonWorks技术是集成`LON网络`的完整的开发平台
 ### 4.1.3 Neuron芯片及通信协议
 LON网上的每个控制点被成为`LON节点`或`LonWorks智能设备`  
 
-LON节点组成: `Neuron芯片`，`传感器`，`收发器(建立Neuron芯片与传输之间的物理连接)`和`电源`  
+:star:LON节点组成: `Neuron芯片`，`传感器和控制设备`，`收发器(建立Neuron芯片与传输之间的物理连接)`和`电源`  
 
 ![img](img/典型的LON节点的方框图.png '图1 典型的LON节点的方框图. :size=50%')  
 
@@ -52,7 +54,7 @@ LON节点组成: `Neuron芯片`，`传感器`，`收发器(建立Neuron芯片与
 - >`第三级`: 节点(Node) - 每个子网可以有<font color=green>127个节点</font>，节点<font color=purple>可编成组(可以是不同子网的节点),一个域内可有256个组</font>  
 
 
-**LonTalk协议的四种消息服务类型**: `应答(ACKD)`,`请求/响应(REQUEST)`, `非应答式重发(UNACKD-RPT)`,`非应答式(UNACKD)`  
+:star:**LonTalk协议的四种消息服务类型**: `应答(ACKD)`,`请求/响应(REQUEST)`, `非应答式重发(UNACKD-RPT)`,`非应答式(UNACKD)`  
 
 ---
 #### 3) 网络变量及显示消息
