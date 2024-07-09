@@ -5,6 +5,7 @@
    * [makefile(太散乱了-新笔记见Makefile)](makefile(太散乱了-新笔记见Makefile)/)
    * [riscv](riscv/)
    * [PID控制](PID控制/)
+   * [编译原理](编译原理/)
    * [小知识点](小知识点/)
    * [hardware](hardware/)
    * [bash](bash/)

@@ -5,7 +5,7 @@ all_files=()
 generate_sidebar() {
     local cur_directory="$1"
     # 两个find,分别用于寻找文件和文件夹
-    local files_and_dirs=$(find "$cur_directory" -mindepth 1 -maxdepth 1 -type d ! -path "*/img/*" ! -path "*/.git"  ! -name "_*" ; find "$cur_directory" -mindepth 1 -maxdepth 1 ! -type d ! -path "*/img/*" ! -path "*/.git/*" ! -name ".*" ! -name "_*" ! -name "README.md" ! -name "*.sh" ! -name "index.html" | sort)
+    local files_and_dirs=$(find "$cur_directory" -mindepth 1 -maxdepth 1 -type d ! -path "*/img/*" ! -path "*/.git"   ! -path "*/static"  ! -path "*/jyyslide-md"! -name "_*" ; find "$cur_directory" -mindepth 1 -maxdepth 1 ! -type d ! -path "*/img/*" ! -path "*/.git/*" ! -name ".*" ! -name "_*" ! -name "README.md" ! -name "*.sh" ! -name "index.html" | sort)
     #echo "$files_and_dirs"
     local sidebar_file="${cur_directory}/_sidebar.md"
     local sidebar_file_ab

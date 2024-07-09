@@ -46,7 +46,7 @@ ELF Header:
 
 ---
 ### .bss
-节内容: 根据定义，当程序开始运行时，系统将数据初始化为零。该节的类型为 `SHT_NOBITS`。属性类型为 `SHF_ALLOC` 和 `SHF_WRITE`  
+节内容: <font color=reg>该部分保存为初始化的全局变量和静态变量</font>，根据定义，当程序开始运行时，系统将数据初始化为零。该节的类型为 `SHT_NOBITS`。属性类型为 `SHF_ALLOC` 和 `SHF_WRITE`  
 
 
 ---

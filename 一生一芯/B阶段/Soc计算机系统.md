@@ -1,10 +1,7 @@
-# 要做的
-- [ ] 将AXI补全，并优化成XBAR(AXI)结构，而不是AXI(XBAR)  
+# SoC
 
-- [ ] 再次修改设备借口，让其不用受xbar-decode控制，而是传递使能信号时，进行&处理。（在介入mrom时修改)  
-
----
-对于设备的访问，进行读操作,将<font color=red>会改变设备的状态</font>   
-> <font color=red>例如，读串口，多读几个字节，会将缓冲区的字节也读出来，可能此时并不需要这些数据</font>  
+## 链接脚本的编写
+**<font color=red>遇到的难点(已解决)</font>**: .data节的长度为0  
+- >`解决方法`: 通过`--print-map`参数，得知<font color=green>全局变量的数据名为$ .data.a$,$ .sdata.*$,因此在`.data`节中添加了这些进去</font>，从而就实现了  
 
 
