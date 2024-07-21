@@ -8,3 +8,4 @@
    * [状态机模型](状态机模型.md)
    * [ysyx信息框说明](ysyx信息框说明.png)
    * [ysyx_makefile框架代码理解](ysyx_makefile框架代码理解.md)
+   * [ysyxsoc源码阅读笔记](ysyxsoc源码阅读笔记.md)

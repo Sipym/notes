@@ -1,4 +1,5 @@
 * 工具
+   * [jyyslide-md使用笔记](jyyslide-md使用笔记/)
    * [fish](fish/)
    * [arm-none-eabi-gcc](arm-none-eabi-gcc/)
    * [verilator](verilator/)
