@@ -6,3 +6,4 @@
    * [总线](总线.md)
    * [npc搭建过程](npc搭建过程.md)
    * [Soc计算机系统](Soc计算机系统.md)
+   * [SoC-uart](SoC-uart.md)

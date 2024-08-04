@@ -7,6 +7,7 @@
    * [nvm-npm,nodejs版本管理工具](nvm-npm,nodejs版本管理工具/)
    * [matlab](matlab/)
    * [vim](vim/)
+   * [perf-程序性能分析工具](perf-程序性能分析工具/)
    * [ranger](ranger/)
    * [alacritty](alacritty/)
    * [docsify](docsify/)
