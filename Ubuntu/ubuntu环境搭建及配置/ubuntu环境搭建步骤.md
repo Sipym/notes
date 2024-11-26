@@ -24,7 +24,8 @@ sudo bash -c 'echo "deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main r
     - sudo python3 setup.py install
 7. 安装llvm(官网下载)
 8. 安装node[官网下载Linux Binaries (x64)](https://nodejs.org/en/download)
-9. 安装yarn，npm: `sudo apt-get install yarn npm`  
+9. 安装yarn，npm: `sudo apt-get install  npm`  
+   - tip: yarn不要通过这个方式安装，否则会安装cmdtest这个包，建议通过`sudo npm install -g yarn`来安装  
 10. 安装tmux[官网下载](https://github.com/tmux/tmux)
 11. 安装git  
   - github添加ssh密钥[参考](https://www.runoob.com/git/git-remote-repo.html)
