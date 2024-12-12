@@ -1,6 +1,5 @@
 * 工具
    * [jyyslide-md使用笔记](jyyslide-md使用笔记/)
-   * [fish](fish/)
    * [arm-none-eabi-gcc](arm-none-eabi-gcc/)
    * [verilator](verilator/)
    * [pip-python包管理工具](pip-python包管理工具/)
@@ -11,6 +10,7 @@
    * [ranger](ranger/)
    * [alacritty](alacritty/)
    * [docsify](docsify/)
+   * [oh-my-zsh](oh-my-zsh/)
    * [git](git/)
    * [tmux](tmux/)
    * [gdb](gdb/)

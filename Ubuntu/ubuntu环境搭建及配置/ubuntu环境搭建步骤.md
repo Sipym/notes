@@ -136,6 +136,9 @@ sudo bash -c 'echo "deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main r
 
 
 
+---
+## 安装zsh,on my zsh
+根据文档"https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH"操作即可
 
 
 

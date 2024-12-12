@@ -1,5 +1,6 @@
 * B阶段
    * [存储器相关](存储器相关.md)
+   * [流水线](流水线.md)
    * [思考题](思考题.md)
    * [异常处理和RT-thread](异常处理和RT-thread.md)
    * [用RTL实现最简单的处理器](用RTL实现最简单的处理器.md)
@@ -7,3 +8,4 @@
    * [npc搭建过程](npc搭建过程.md)
    * [Soc计算机系统](Soc计算机系统.md)
    * [SoC-uart](SoC-uart.md)
+   * [ysyxsoc源码阅读笔记](ysyxsoc源码阅读笔记.md)
