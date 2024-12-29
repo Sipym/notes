@@ -38,3 +38,13 @@
 `git mv file_from file_to`  
 
 
+## git commit --amend 撤销操作
+**功能**: 当上一次提交漏了几个文件时，可以通过这个命令来代替第一次提交的结果; 也可以用来修改提交信息  
+
+## git reset HEAD files 取消暂存的文件
+**功能**: 取消已暂存的文件  
+
+## git checkout -- files 撤销对文件的修改
+**功能**: 将文件恢复到上一次提交的状态。
+
+
