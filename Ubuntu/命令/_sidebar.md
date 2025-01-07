@@ -12,6 +12,7 @@
    * [ls命令](ls命令.md)
    * [sed命令之批量对文件内容进行修改](sed命令之批量对文件内容进行修改.md)
    * [time显示命令执行所花时间](time显示命令执行所花时间.md)
+   * [unar解压压缩包-自动识别编码](unar解压压缩包-自动识别编码.md)
    * [unset用于移除shell环境变量](unset用于移除shell环境变量.md)
    * [unzip解压zip文件](unzip解压zip文件.md)
    * [wc命令-计算文件行数等](wc命令-计算文件行数等.md)
