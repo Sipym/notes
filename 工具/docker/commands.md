@@ -25,6 +25,8 @@ docker ps -a
 # 删除已停止的容器
 docker rm <container_id_or_name>
 
+
+
 ```
 
 

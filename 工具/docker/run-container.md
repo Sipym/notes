@@ -22,8 +22,12 @@ docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]
 ### Options
 **用途**: [OPTIONS]可以让你配置容器的选项。
 - > `--name`: 你可以给容器命名（--name）
+
 - > `-d`: 或将其作为后台进程运行（-d）。  
+
 - > `--cpus="number"  --memory="4g"`: 可以设置选项来控制资源限制和联网等事项.    
+
+- > `-v ~/workspace:/workspace image-name`: <font color = darkred>使用卷volumes挂载我的工作目录或者配置文件目录，用于主机和容器之间共享文件</font>。  
 
 ---
 

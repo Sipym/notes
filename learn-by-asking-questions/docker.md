@@ -4,20 +4,23 @@
 已解决,详细见`~/notes/工具/docker/docker-architecture.md`。
 
 
+---
 ## question2: 容器是如何运行以及管理的？
 1. 可以通过`docker run`或`docker container create`来创建一个容器，并运行  
 2. 当容器停止时，可以再次启动，或者移除。  
 
 
-## question3: :star:如何通过dockerfile创建一个自己的镜像？
+---
+
+## question3: :star: 通过dockerfile创建一个自己的镜像？
 1. **base image**: 所有镜像都是基于`base image`延伸而来的。它<font color = red>指的是 Dockerfile 中 FROM 指令的内容</font>  
    - > 不需要自己创建，包含一个庞大的 Docker 镜像库，适合在构建过程中用作基础镜像  
    - > Docker官方、已验证发布者以及赞助的开源软件镜像 都有相应的标志  
    ```Dockerfile
-   FROM debian
+   FROM ubuntu24.04
    ```
 
-2. ...
+2. 每次在容器中下载新工具等时，尝试在dockerfile中复现出来。
 
 
 ## question4: 如何创建一个自己的开发环境？
@@ -39,3 +42,4 @@
 8. 上传镜像到Docker Hub. `docker push yourusername/myapp:v1.0`  
 
 9. 可以验证是否上传成功，看看docker hub,或者试试能不能拉取。  
+

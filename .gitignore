@@ -1,0 +1,10 @@
+*
+*.*
+!*/
+
+!.gitignore
+!.nojekyll
+!index.html
+!*.md
+!create_readme_file.sh
+!update_sidebar.sh
