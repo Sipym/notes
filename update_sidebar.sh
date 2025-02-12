@@ -57,18 +57,3 @@ generate_sidebar() {
 }
 
 generate_sidebar "/home/awjl/notes"
-
-echo "search: [" > 1.txt
-count=0
-for file in "${all_files[@]}"; do
-    # Remove the prefix '/home/awjl/notes/' from each file path
-    file_without_prefix="${file#/home/awjl/notes/}"
-    echo -n "'$file_without_prefix'," >> 1.txt
-    ((count++))
-    if [ $((count % 8)) -eq 0 ]; then
-        echo "" >> 1.txt  # Add a newline after every 5th file
-    fi
-done
-
-
-
