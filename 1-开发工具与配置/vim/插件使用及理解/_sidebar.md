@@ -1,4 +1,4 @@
-* vim插件使用及理解
+* 插件使用及理解
    * [snippts和ultisnips](snippts和ultisnips/)
    * [coc](coc/)
    * [YCM](YCM/)

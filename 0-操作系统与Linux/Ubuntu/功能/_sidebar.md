@@ -9,4 +9,4 @@
    * [自带的好用快捷键](自带的好用快捷键.md)
    * [esc替换成capslock](esc替换成capslock.md)
    * [tar解压文件及安装要点](tar解压文件及安装要点.md)
-   * [ubuntu扩容](ubuntu扩容.md)
+   * [ubuntu扩容-By-Gparted](ubuntu扩容-By-Gparted.md)

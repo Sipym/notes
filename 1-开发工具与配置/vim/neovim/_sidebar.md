@@ -1,3 +1,3 @@
 * neovim
-   * [功能](功能.md)
-   * [介绍](介绍.md)
+   * [基本使用指南](基本使用指南.md)
+   * [lazy-nvim-plugin](lazy-nvim-plugin.md)
