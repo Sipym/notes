@@ -34,8 +34,22 @@ message Person {
 
 ## gRPC项目的实现步骤
 1. 通过`Protocal Buffers`定义服务(RPC接口)和消息结构(请求和响应格式).   
+
 2. 通过编译器protoc生成服务器端和客户端的接口代码。  
-3. 实现服务器端: 
+   - 命令示例:
+      ```bash
+      # Cpp
+      protoc --cpp_out=. --grpc_out=. --plugin=protoc-gen-grpc=$(which grpc_cpp_plugin) helloworld.proto
+      ```
+   - 生成内容:  
+      - > 客户端存根(Stub): 客户端<font color = red>直接调用的类</font>，封装了RPC通信细节  
+      - > 服务器接口: 服务端需要实现的<font color = blue>抽象基类</font>,<font color = red>只有框架</font>     
+
+3. 实现服务器端逻辑: 继承生成的基类,重写服务方法，填充业务逻辑   
+
+4. 编写客户端调用代码: 使用生成的Stub发起RPC调用,和调用本地方法一样  
+
+5. 启用服务端&测试  
 
 # gRPC核心概念、架构和生命周期
 

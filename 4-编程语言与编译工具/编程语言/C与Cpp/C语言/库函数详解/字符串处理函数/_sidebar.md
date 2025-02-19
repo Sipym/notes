@@ -1,8 +1,7 @@
 * 字符串处理函数
-   * [查看有哪些字符串处理函数](查看有哪些字符串处理函数.md)
    * [memcmp](memcmp.md)
-   * [memcpy和strcpy的区别](memcpy和strcpy的区别.md)
    * [memcpy](memcpy.md)
+   * [memcpy和strcpy的区别](memcpy和strcpy的区别.md)
    * [memmove](memmove.md)
    * [memset](memset.md)
    * [sizeof和strlen的区别](sizeof和strlen的区别.md)
@@ -12,3 +11,4 @@
    * [strcpy函数](strcpy函数.md)
    * [strlen](strlen.md)
    * [strtok函数](strtok函数.md)
+   * [查看有哪些字符串处理函数](查看有哪些字符串处理函数.md)
